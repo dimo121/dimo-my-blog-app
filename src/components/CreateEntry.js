@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createEntry } from '../actions/entries';
+import { startCreateEntry } from '../actions/entries';
 import EntryFormPage from './EntryFormPage';
 import React from 'react';
 
@@ -17,7 +17,7 @@ class CreateEntry extends React.Component {
             <div className="create__container">
                 <h1>Create entry</h1>
                 <EntryFormPage onSubmit={(entry) => {
-                    this.props.dispatch(createEntry(entry, this.blog_id));
+                    this.props.dispatch(startCreateEntry(entry, this.blog_id));
                     this.props.history.push('/');
                 }}/>
             </div>

@@ -1,13 +1,13 @@
 import React from 'react';
 import EntryFormPage from './EntryFormPage';
 import { connect } from 'react-redux';
-import { createBlog } from '../actions/blogs';
+import { startCreateBlog } from '../actions/blogs';
 
 const CreateBlog = (props) => (
             <div className="create__container">
                 <h1>Create blog</h1>
                 <EntryFormPage onSubmit={(blogEntry) => {
-                    props.dispatch(createBlog(blogEntry));
+                    props.dispatch(startCreateBlog(blogEntry));
                     props.history.push('/');
                 }}/>
             </div>

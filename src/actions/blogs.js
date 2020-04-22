@@ -1,18 +1,24 @@
-import uuid from 'uuid';
+//import uuid from 'uuid';
+import database from '../firebase/firebase';
 
-export const createBlog = ( {   title = '', 
+const createBlog = (blog) => ({
+    type: 'CREATE_BLOG',
+    blog
+})
+
+export const startCreateBlog = ( {   title = '', 
                                 content = '', 
-                                createdAt = 0 } = {}) => {
-    return {
-        type : 'CREATE_BLOG',
-        blog: {
-            id: uuid(),
-            title,
-            content,
-            createdAt,
-            entries : []
-        }
-    }
+                                createdAt = 0,
+                                entries = [] } = {}) => {
+    return (dispatch) => {
+        const blog = { title, content, createdAt, entries };
+        return database.ref('blogs').push(blog).then((ref) => {
+            dispatch(createBlog({
+                id: ref.key,
+                ...blog
+            }));
+        });
+    };
 };
 
 export const deleteBlog = (id) => {
