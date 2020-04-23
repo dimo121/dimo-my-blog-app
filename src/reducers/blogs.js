@@ -14,6 +14,10 @@ export default (state = blogsDefaultState, action) => {
             return state;
         case 'DELETE_BLOG':
             return state.filter((blog) => blog.id != action.id);
+        case 'SET_BLOGS':
+            return [
+                ...action.blogs
+            ];
         default:
             return state; 
     }

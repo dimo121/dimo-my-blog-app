@@ -4,14 +4,16 @@ import EntryListFilter from './EntryListFilter';
 import React from 'react';
 
 
-const Dashboard = (props) => (
-    <div className="search__container">
-        <EntryListFilter />
-        {props.blogs.map((item) => {
-            return <BlogItem key={item.id} blog={item} />;
-        })}
-    </div>
-);
+const Dashboard = (props) => {
+    return(
+        <div className="search__container">
+            <EntryListFilter />
+            {props.blogs.map((item) => {
+                return <BlogItem key={item.id} blog={item} />;
+            })}
+        </div>
+    );
+};
 
 
 const mapStateToProps = (state) => {

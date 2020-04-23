@@ -28,14 +28,22 @@ export const deleteBlog = (id) => {
     }
 };
 
-/*
+const setBlogs = (blogs) => ({
+    type: 'SET_BLOGS',
+    blogs
+});
 
-no longer need for this action as blog_id is passed as Link prop
-export const changeActiveBlog = (blog_id) => {
-    return {
-        type: 'CHANGE_ACTIVE_BLOG',
-        blog_id: blog_id
-    }
+export const startSetBlogs = () => {
+    return (dispatch) => {
+        const blogs = [];
+        return database.ref('blogs').once('value').then((snapshot) => {
+            snapshot.forEach((childSnapshot) => {
+                blogs.push({
+                    id: childSnapshot.key,
+                    ...childSnapshot.val()
+                });
+            });
+            dispatch(setBlogs(blogs));
+        });
+    };
 };
-
-*/

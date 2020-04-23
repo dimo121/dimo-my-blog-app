@@ -15,7 +15,7 @@ class BlogItem extends React.Component {
             <div className="blogContainer">
                 <h1>{this.props.blog.title}<span className="blogContainer__span">{this.props.blog.createdAt}</span></h1>
                 <p>{this.props.blog.content}</p>
-                <p>Replies: {this.props.blog.entries.length} 
+                <p>Replies: {this.props.blog.entries ? Object.keys(this.props.blog.entries).length : 0}
                     <span>
                         <Link className='Link' to={{
                                                         pathname:'/createentry',
