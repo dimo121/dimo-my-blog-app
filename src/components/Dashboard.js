@@ -5,6 +5,8 @@ import React from 'react';
 
 
 const Dashboard = (props) => {
+    console.log('show');
+    console.log(props.blogs);
     return(
         <div className="search__container">
             <EntryListFilter />

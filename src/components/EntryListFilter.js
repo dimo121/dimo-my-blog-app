@@ -1,5 +1,6 @@
 import React from 'react';
 
+// yet to implement selector 
 
 export default class EntryListFilter extends React.Component{
 

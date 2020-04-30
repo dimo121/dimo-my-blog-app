@@ -38,7 +38,10 @@ export const startSetBlogs = () => {
         const blogs = [];
         return database.ref('blogs').once('value').then((snapshot) => {
             snapshot.forEach((childSnapshot) => {
+                //firebase does not register empty entries array
+                //firebase store array as object
                 blogs.push({
+                    entries: [],
                     id: childSnapshot.key,
                     ...childSnapshot.val()
                 });

@@ -5,7 +5,10 @@ html{
 body{
     font-family: Helvetica, Arial, Sans-serif;
     font-size: $m-size;
-    background: #212527;
+    background-image: url("http://localhost:8080/background1.jpg");
+}
+
+.mainContainer {
 }
 
 button{

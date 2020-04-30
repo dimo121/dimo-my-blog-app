@@ -1,20 +1,15 @@
 .blogContainer {
     background-color: white;
-    //border: 1.5px solid black;
-    //border-radius: 1rem;
     padding: $s-size;
-    border-left: 9px solid $grey;
+    border-left: 9px solid $grey-blue;
     font-family: 'Playfair Display', serif;
     margin: 0 0 $l-size $l-size;
-    text-decoration: none;
     width: 60%;
 }
 
 .blogContainer h1 {
     color: $off-black;
     margin: $m-size;
-    //padding-top: $m-size;
-    text-decoration: none;
 }
 
 .blogContainer p {
@@ -23,18 +18,15 @@
 }
 
 .blogContainer__span {
-    //background-color: $gainsboro;
-    //border-radius: 2rem;
     float: right;
     font-size: 1.6rem;
     font-weight: 100;
     margin-top: 0.5rem;
-    //padding: 5px;
 }
 
 .blogContainer button {
     background: $gainsboro;    
-    border: none;
+    border: 1px solid black;
     border-radius: 2rem;
     float: right;
     height: 3rem;

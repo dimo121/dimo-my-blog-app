@@ -3,7 +3,9 @@ const filtersDefaultState = {
     active_blog : 0 
 };
 
+//yet to implement search and filter
 
+/*
 export default (state = filtersDefaultState, action) => {
     switch(action.type) {
         case 'CHANGE_ACTIVE_BLOG':
@@ -15,7 +17,7 @@ export default (state = filtersDefaultState, action) => {
     }
 }
 
-/*
+
 
 export default (state = blogEntriesDefaultState, action) => {
     switch(action.type) {
