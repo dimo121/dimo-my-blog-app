@@ -9,24 +9,24 @@ class BlogPage extends React.Component{
         this.blog = {}
     }
 
-    componentDidMount(){
-        
-    }
-
     render(){
         const index = this.props.blogs.findIndex((item) => item.id == this.props.match.params.id);
-        console.log(index);
         this.blog = this.props.blogs[index];
-        console.log(this.blog);
         return (
-            <div>
-                <h1>Results :</h1>
-                { 
-                    this.blog.entries.map((item) => {
-                        console.log(item);
-                        //return <EntryItem key={item.id} entry={item} />;
-                    })
-                }
+            <div className="search__container">
+                <div className="blogContainer">
+                    <h1>{this.blog.title}<span className="blogContainer__span">{this.blog.createdAt}</span></h1>
+                    <p>{this.blog.content}</p>
+                    <p>Replies: {this.blog.entries.length}
+                    </p>
+                </div>
+                <div>
+                    { 
+                        this.blog.entries.map((item) => {
+                            return <EntryItem key={item.id} entry={item} />;
+                        })
+                    }
+                </div>
             </div>
         );
     };

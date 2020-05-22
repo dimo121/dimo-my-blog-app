@@ -14,7 +14,17 @@
 
 .blogContainer p {
     color: $off-black;
+    font-family: 'Lora';
     margin: 0 $m-size $m-size $m-size;
+}
+
+.blogContainer button {
+    background: $gainsboro;    
+    border: 1px solid black;
+    border-radius: 2rem;
+    height: 3rem;
+    width: 9rem;
+    float: right;
 }
 
 .blogContainer__span {
@@ -24,11 +34,8 @@
     margin-top: 0.5rem;
 }
 
-.blogContainer button {
-    background: $gainsboro;    
-    border: 1px solid black;
-    border-radius: 2rem;
-    float: right;
-    height: 3rem;
-    width: 9rem;
+/*
+.blogContainer__grid {
+    display: grid;
 }
+*/
